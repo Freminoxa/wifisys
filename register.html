@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+     body {
+        font-family: Arial, sans-serif;
+            background-color: midnightblue;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            /* background-color: #f4f4f4; */
+            scroll-behavior: none;
+            
+        }
+        header {
+            background-color:indigo;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color:mediumspringgreen;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color:black;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0px;
+        }
+
+        .column {
+    margin: 0 20px;
+}
+
+
+      .registration-container {
+            background-color: whitesmoke;
+            border-radius: 30px;
+            /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); */
+            padding:5%;
+            text-align: center;
+            width: 250px;
+            justify-content: center;
+            /* height: 30vh; */
+            margin-left: 40%;
+            margin-top: 5%;
+            margin-bottom: 30%;
+            height: 35vh;
+            
+            /* padding: 3px; */
+        }
+
+        .login-input {
+            width: 90%;
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-button {
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color:orchid;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .registration-input{
+            background-color: antiquewhite;
+            padding: 5%;
+            text-align: ;
+            padding-top: 0.5%;
+            /* scroll-padding-top: 3%; */
+            width: 100%;
+            border-spacing: 2rem;
+            margin-top: -2%;
+
+        }
+        
+</style>
+</head>
+<body>
+    <header>
+        <h1><b>FrankTech Empire</b></h1>
+        <h2>Welcome to our services. We are honored to serve you to the best of our ability.</h2>
+    </header>
+
+    <nav>
+        <a href="Frank.html">Home</a>
+        <a href="help.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="#">Help</a>
+    </nav>
+    <div class="column">
+        <div class="registration-container">
+            <h2>Register</h2>
+            <form id="registrationForm" action="registration_process.php" method="POST">
+                <input type="text" class="registration-input" name="username" id="demo" placeholder="Username"
+                    required><br><br>
+                <input type="tel" class="registration-input" name="phone" placeholder="Phone Number" required><br><br>
+                <input type="password" class="registration-input" name="password" id="password"
+                    placeholder="Password" required><br><br>
+                <input type="password" class="registration-input" name="confirm_password" id="confirmPassword"
+                    placeholder="Confirm Password" required><br><br>
+                <button type="button" class="login-button" onclick="validateForm()">Register</button>
+                <p>Already have an account? <br><br><a href="help.html" class="login-button">Sign In</a></p>
+            </form>
+        </div>
+    </div>
+    
+    
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+    
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+            } else {
+                // Passwords match, you can submit the form
+                document.getElementById("registrationForm").submit();
+            }
+        }
+    </script>
+    
+    
+    
+
+    <footer>
+        <p>&copy; 2023 FrankTech Empire. All rights reserved.</p>
+    </footer>
+
+    <script>
+        var name = document.getElementById('demo').value;
+        x = 12
+        y = 13
+
+        z = x + y
+        console.log(z)
+    </script>
+</body>
+
+</html>
