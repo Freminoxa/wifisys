@@ -6,102 +6,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-
-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: midnightblue;
+        /* Reset and Body Styling */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        header {
-            background-color: indigo;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a237e;
             color: #fff;
-            padding: 10px 0;
-            text-align: center;
         }
 
+        /* Header Styling */
+        header {
+            background: linear-gradient(90deg, indigo, rebeccapurple);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        header h2 {
+            font-size: 1.2em;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+
+        /* Navigation Styling */
         nav {
             background-color: mediumspringgreen;
-            padding: 10px 0;
+            padding: 15px;
             text-align: center;
+            font-weight: bold;
         }
 
         nav a {
-            color: black;
+            color: #333;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 20px;
+            font-size: 1.1em;
+            transition: color 0.3s;
         }
 
-        .login-container {
-            background-color: whitesmoke;
-            border-radius: 20px;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+        nav a:hover {
+            color: #1a237e;
+        }
+
+        /* Container for Packages */
+        .package-container {
+            background-color: midnightblue;
+            padding: 60px 20px;
             text-align: center;
-            width: 300px;
-            margin: 5% auto; /* Center the container vertically and horizontally */
         }
 
-        .login-input {
-            width: 90%;
-            margin-bottom: 15px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .package-container h2 {
+            color: #f5f5f5;
+            font-size: 2em;
+            margin-bottom: 30px;
+            font-weight: 400;
         }
 
-        .login-button {
-            background-color: #4caf50;
+        /* Button Styles */
+        .package-button {
+            margin: 10px;
+            padding: 15px 25px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 1em;
             color: white;
             cursor: pointer;
-            font-size: 16px;
-            padding: 10px 20px;
-            transition: background-color 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
         }
 
-        .login-button:hover {
-            background-color: #45a049;
+        .package-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
         }
 
+        .purple { background-color: #800080; }
+        .orange { background-color: #ffa500; }
+        .blue { background-color: #0000ff; }
+        .green { background-color: #008000; }
+        .red { background-color: #ff0000; }
+
+        /* Footer Styling */
         footer {
-            background-color: orchid;
+            background-color: #5e35b1;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px;
+            font-size: 0.9em;
             position: fixed;
             bottom: 0;
             width: 100%;
-        }
-        div{
-            background-color: midnightblue;
-            padding: 140px;
-            text-align: center;
-            flex-wrap: wrap;
-            justify-content: center;
-            display: flex;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1><b>FrankTech Empire</b></h1>
+        <h1>FrankTech Empire</h1>
         <h2>Welcome to our services. We are honored to serve you to the best of our ability.</h2>
     </header>
 
@@ -112,22 +125,20 @@ table {
         <a href="#">Help</a>
     </nav>
     
-    <div >
-        <h2 style="color: white;">Our Packages</h2>
-        <div >
-          <button style="margin: 10px; padding: 10px 20px; background-color: #800080; color: white; border-radius: 5px;">Moderate Daily Unlimited @50/-</button>
-          <button style="margin: 10px; padding: 10px 20px; background-color: #800080; color: white; border-radius: 5px;">Daily Fast Unlimited @80/-</button>
-          <button style="margin: 10px; padding: 10px 20px; background-color: #800080; color: white; border-radius: 5px;">Weekly Unlimited @300/-</button>
-          <button style="margin: 10px; padding: 10px 20px; background-color: #ffa500; color: white; border-radius: 5px;">One Hour Unlimited @10/-</button>
-          <button style="margin: 10px; padding: 10px 20px; background-color: #ffa500; color: white; border-radius: 5px;">Weekly 2 GB @50/-</button>
-          <button style="margin: 10px; padding: 10px 20px; background-color: #ffa500; color: white; border-radius: 5px;">Daily 2 GB @30/-</button>
-          <button style="margin: 10px; padding: 10px 20px; background-color: #0000ff; color: white; border-radius: 5px;">Daily 1 GB @20/-</button>
-          <button style="margin: 10px; padding: 10px 20px; background-color: #0000ff; color: white; border-radius: 5px;">Daily 300 MB @10/-</button>
-          <button style="margin: 10px; padding: 10px 20px; background-color: #0000ff; color: white; border-radius: 5px;">Daily 100 MB @5/-</button>
-          <button style="margin: 10px; padding: 10px 20px; background-color: #008000; color: white; border-radius: 5px;">Monthly 30 GB @500/-</button>
-          <button style="margin: 10px; padding: 10px 20px; background-color: #ff0000; color: white; border-radius: 5px;">MONTHLY UNLIMITED @1000/-</button>
-        </div>
-      </div>
+    <div class="package-container">
+        <h2>Our Packages</h2>
+        <button class="package-button purple">Moderate Daily Unlimited @50/-</button>
+        <button class="package-button purple">Daily Fast Unlimited @80/-</button>
+        <button class="package-button purple">Weekly Unlimited @300/-</button>
+        <button class="package-button orange">One Hour Unlimited @10/-</button>
+        <button class="package-button orange">Weekly 2 GB @50/-</button>
+        <button class="package-button orange">Daily 2 GB @30/-</button>
+        <button class="package-button blue">Daily 1 GB @20/-</button>
+        <button class="package-button blue">Daily 300 MB @10/-</button>
+        <button class="package-button blue">Daily 100 MB @5/-</button>
+        <button class="package-button green">Monthly 30 GB @500/-</button>
+        <button class="package-button red">MONTHLY UNLIMITED @1000/-</button>
+    </div>
 
     <footer>
         <p>&copy; 2023 FrankTech Empire. All rights reserved.</p>
@@ -135,7 +146,3 @@ table {
 </body>
 
 </html>
-
-
-
-

@@ -39,7 +39,7 @@
             padding: 20px;
             text-align: center;
             width: 300px;
-            margin: 5% auto; /* Center the container vertically and horizontally */
+            margin: 5% auto;
         }
 
         .login-input {
@@ -93,9 +93,15 @@
     
     <div class="login-container">
         <h2>Login</h2>
-        <form>
-            <input class="login-input" type="text" placeholder="Username" required><br>
-            <input class="login-input" type="password" placeholder="Password" required><br>
+
+        <!-- Success message if registration was successful -->
+        <?php if(isset($_GET['registration']) && $_GET['registration'] == 'success'): ?>
+        <div class="success-message" style="color: green; margin-bottom: 15px;">Registration successful! Please login.</div>
+        <?php endif; ?>
+
+        <form action="login_process.php" method="POST">
+            <input class="login-input" type="text" name="username" placeholder="Username or Phone" required><br>
+            <input class="login-input" type="password" name="password" placeholder="Password" required><br>
             <button class="login-button" type="submit">Sign In</button>
         </form>
     </div>
