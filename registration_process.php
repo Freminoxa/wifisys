@@ -16,7 +16,7 @@ try {
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Validate input
+        
         if (empty($_POST['username']) || empty($_POST['phone']) || empty($_POST['password']) || empty($_POST['confirm_password'])) {
             throw new Exception("All fields are required!");
         }
@@ -26,7 +26,7 @@ try {
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
 
-        // Password validation
+        
         if ($password !== $confirm_password) {
             throw new Exception("Passwords do not match!");
         }
@@ -35,10 +35,10 @@ try {
             throw new Exception("Password must be at least 6 characters long!");
         }
 
-        // Hash password
+        
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-        // Check if username or phone already exists
+        
         $check_stmt = $conn->prepare("SELECT username, phone_number FROM users WHERE username = ? OR phone_number = ?");
         $check_stmt->bind_param("ss", $username, $phone);
         $check_stmt->execute();
@@ -49,14 +49,14 @@ try {
         }
         $check_stmt->close();
 
-        // Insert new user
+        
         $stmt = $conn->prepare("INSERT INTO users (username, phone_number, password) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $username, $phone, $hashed_password);
         
         if ($stmt->execute()) {
             $stmt->close();
             $conn->close();
-            // Redirect to login page with success message
+            
             header("Location: login.html?registration=success");
             exit();
         } else {
